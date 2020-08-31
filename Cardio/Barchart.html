@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<script>
+
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+	    authDomain: "sdplab-dbd0a.firebaseapp.com",
+	    databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+	    projectId: "sdplab-dbd0a",
+	    storageBucket: "sdplab-dbd0a.appspot.com",
+	    messagingSenderId: "215031990656"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+</head>
+
+<body>
+
+<h1> This is the Bar Chart Representation</h1>
+<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+<h1> This is the Pie Chart Representation</h1>
+<div id="chartContainer2" style="height: 400px; width: 100%;"></div>
+<h1> This is the Line Chart Representation</h1>
+<div id="chartContainer3" style="height: 400px; width: 70%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src = "js/Chart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+	<!DOCTYPE html>
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cardio: Hospital</title>
+		<meta name="description" content="Cardio is a free one page template made exclusively for Codrops by Luka Cvetinovic" />
+		<meta name="keywords" content="html template, css, free, one page, gym, fitness, web design" />
+		<meta name="author" content="Luka Cvetinovic for Codrops" />
+		<!-- Favicons (created with http://realfavicongenerator.net/)-->
+		<link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="img/favicons/manifest.json">
+		<link rel="shortcut icon" href="img/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#00a8ff">
+		<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<!-- Normalize -->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap2.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<!-- Owl -->
+		<link rel="stylesheet" type="text/css" href="css/owl.css">
+		<!-- Animate.css -->
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+		<!-- Elegant Icons -->
+		<link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
+		<!-- Main style -->
+		<link rel="stylesheet" type="text/css" href="css/cardio.css">
+
+	</head>
+	<script src ="js/Observer.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+	    authDomain: "sdplab-dbd0a.firebaseapp.com",
+	    databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+	    projectId: "sdplab-dbd0a",
+	    storageBucket: "sdplab-dbd0a.appspot.com",
+	    messagingSenderId: "215031990656"
+	  };
+	  firebase.initializeApp(config);
+
+	</script>
+
+	<body>
+		<div class="preloader">
+			<img src="img/loader.gif" alt="Preloader image">
+		</div>
+		<!--Starting of navigation bar-->
+		<nav class="navbar">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/logo.png" data-active-url="img/logo-active.png" alt=""></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right main-nav">
+						<li><a href="#intro">Intro</a></li>
+						<li><a href="#pharmacy">Pharmacy</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"> Login</a></li>
+						<li> <div class="dropdown">
+							<button id="signLabel" class="form-control form-white dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Sign Up
+							</button>
+							<ul class="dropdown-menu animated fadeIn" role="menu" aria-labelledby="dLabel">
+								<li class="animated lightSpeedIn"><a href="#" data-toggle="modal" data-target="#doc_signup_form" class="btn btn-blue">Doctor</a></li>
+								<li class="animated lightSpeedIn"><a href="#" data-toggle="modal" data-target="#seller_signup_form" class="btn btn-blue">Seller</a></li>
+								<li class="animated lightSpeedIn"><a href="#" data-toggle="modal" data-target="#patient_signup_form" class="btn btn-blue">patient</a></li>
+							</ul>
+						</div>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!--Ending of navigation bar-->
+		<header id="intro">
+			<div class="container">
+				<div class="table">
+					<div class="header-text">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<h3 class="light white">Take care of your body.</h3>
+								<h1 class="white typed">It's the only place you have to live.</h1>
+								<span class="typed-cursor">|</span>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--Ending of header section "intro"-->
+
+		<section id="pharmacy" class="section gray-bg">
+			<div class="container">
+				<div class="row title text-center">
+					<h2 class="margin-top">Pharmacy</h2>
+					<h4 class="muted regular"> Find nearest pharmacy!!</h4>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team text-center">
+							<div class="cover" style="background:url('img/team/team-cover1.jpg'); background-size:cover;">
+								<div class="overlay text-center">
+									<h5 class="white">OLD patient: $300.00 BDT </h5>
+									<h5 class="white">New patient: $550.00 BDT </h5>
+								</div>
+							</div>
+							<!--<img src="img/team/team3.jpg" alt="Team Image" class="avatar">-->
+							<div class="title">
+								<h4>Modina Pharma</h4>
+								<h5 class="muted regular">20/1 Babor Road</h5>
+								<h5 class="muted regular">Mohammadpur, Dhaka</h5>
+								<h5><b>Open At:</b></h5>
+								<h5>8:00 AM-8:00 PM</h5>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-4">
+						<div class="team text-center">
+							<div class="cover" style="background:url('img/team/team-cover3.jpg'); background-size:cover;">
+								<div class="overlay text-center">
+									<h5 class="white">OLD patient: $300.00 BDT </h5>
+									<h5 class="white">New patient: $500.00 BDT </h5>
+								</div>
+							</div>
+							<!--<img src="img/team/team3.jpg" alt="Team Image" class="avatar">-->
+							<div class="title">
+								<h4>Lazz Pharma</h4>
+								<h5 class="muted regular">20/1 Humayun Road</h5>
+								<h5 class="muted regular">Mohammadpur, Dhaka</h5>
+								<h5><b>Available At:</b></h5>
+								<h5>8:00 AM-10:00 PM</h5>
+							</div>
+						</div>
+					</div>
+
+                    <div class="col-md-4">
+						<div class="team text-center">
+							<div class="cover" style="background:url('img/team/sefa.jpeg'); background-size:cover;">
+								<div class="overlay text-center">
+									<h5 class="white">OLD patient: $300.00 BDT </h5>
+									<h5 class="white">New patient: $500.00 BDT </h5>
+								</div>
+							</div>
+							<!--<img src="img/team/team3.jpg" alt="Team Image" class="avatar">-->
+							<div class="title">
+								<h4>Sefa Pharma</h4>
+								<h5 class="muted regular">Bus Stand</h5>
+								<h5 class="muted regular">Kolabagan, Dhaka</h5>
+								<h5><b>Available At:</b></h5>
+								<h5>8:00 AM-10:00 PM</h5>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+
+		<div class="modal fade" id="doc_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal-popup">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 class="white">Doctor Sign Up</h3>
+					<form action="" method="get" class="popup-form">
+						<input type="text" id="doctor_name" class="form-control form-white" placeholder="Full Name" value="Palash">
+						<input type="text" id="doctor_username" class="form-control form-white" placeholder="User Name" value="Polluu">
+						<input type="text" id="doctor_email" class="form-control form-white" placeholder="Email Address" value="Pal123@gmail.com">
+						<input type="text" id="doctor_hospital" class="form-control form-white" placeholder="Hospital" value="Labaid">
+						<input type="text" id="doctor_designation" class="form-control form-white" placeholder="Designation" Value="Professor">
+
+						<li class="text-info">Gender:</li>
+						<input type="radio" id="doctor_Male" name="gender" value="male"> Male
+						<input type="radio" id="doctor_Female" name="gender" value="female"> Female
+						<input type="text" id="doctor_num" class="form-control form-white" placeholder="Contact Number" value="0186712345">
+						<input type="password" id="doctor_pass" class="form-control form-white" placeholder="Password">
+						<input type="password" id="doctor_confirm_pass" class="form-control form-white" placeholder="Confirm Password">
+
+
+						<input type="button" value="REGISTER NOW" onclick ="doctorUserDoSomething();">
+						<p class="click">All ready have an account ?. <a href="#" data-toggle="modal" data-target="#myModal"> Login Here</a></p>
+					</form>
+
+
+					<script src="js/Doctor.js"></script>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="seller_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal-popup">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h3 class="white">Seller Sign Up</h3>
+					<form action="php/action_seller_signup.php" method="get" class="popup-form">
+						<input type="text" id="seller_name" class="form-control form-white" placeholder="Full Name">
+						<input type="text" id="seller_username" class="form-control form-white" placeholder="User Name">
+						<input type="text" id="seller_email" class="form-control form-white" placeholder="Email Address">
+						<li class="text-info">Gender:</li>
+						<input type="radio" id="seller_Male" name="gender" value="male"> Male
+						<input type="radio" id="seller_Female" name="gender" value="female"> Female
+						<input type="text" id="seller_pharmacy" class="form-control form-white" placeholder="Pharmacy">
+						<input type="text" id="seller_num" class="form-control form-white" placeholder="Contact Number">
+						<input type="password" id="seller_pass" class="form-control form-white" placeholder="Password">
+						<input type="password" id="seller_confirm_pass" class="form-control form-white" placeholder="Confirm Password">
+						<div class="checkbox-holder text-left">
+						</div>
+						<input type="button" value="REGISTER NOW" onclick ="sellerUserDoSomething();">
+						 <p class="click">All ready have an account ?. <a href="#" data-toggle="modal" data-target="#myModal"> Login Here</a></p>
+					</form>
+
+					<script src="js/Seller.js"></script>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="patient_signup_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal-popup">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+					<h3 class="white">patient Sign Up</h3>
+					<form action="php/action_patient_signup.php" method="get" class="popup-form">
+						<input type="text" id="patient_name" class="form-control form-white" placeholder="Full Name">
+						<input type="text" id="patient_username" class="form-control form-white" placeholder="User Name">
+						<input type="text" id="patient_email" class="form-control form-white" placeholder="Email Address">
+						<input type="text" id="patient_age" class="form-control form-white" placeholder="Age">
+						<li class="text-info">Gender:</li>
+						<input type="radio" id="patient_Male" name="gender" value="male"> Male
+						<input type="radio" id="patient_Female" name="gender" value="female"> Female
+						<input type="text" id="patient_num" class="form-control form-white" placeholder="Contact Number">
+						<input type="password" id="patient_pass" class="form-control form-white" placeholder="Password">
+						<input type="password" id="patient_confirm_pass" class="form-control form-white" placeholder="Confirm Password">
+
+						<input type="button" value="REGISTER NOW" onclick ="user_doSomething();">
+						<p class="click">All ready have an account ?. <a href="#" data-toggle="modal" data-target="#myModal"> Login Here</a></p>
+					</form>
+					<script src="js/Patient.js"></script>
+				</div>
+			</div>
+		</div>
+	<!-- registration-form -->
+	<!-- login -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content modal-info">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body modal-spa">
+								<div class="login-grids">
+									<div class="login">
+										<div class="login-left">
+											<ul>
+												<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+												<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+												<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+											</ul>
+										</div>
+										<div class="login-right">
+											<form>
+												<h3>Signin with your account </h3>
+												<input type="text" placeholder="Enter your email" id= "em2"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}" required="">
+												<input type="password" placeholder="password" id = "pass3" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+												<li class="text-info">LogIn As:</li>
+													<ul>
+														<input type="radio" id="logDoctor" name="type" value="Doctor"> Doctor
+													<input type="radio" id="logPatient" name="type" value="Patient"> Patient
+													<input type="radio" id="logSeller"  name="type"value="Seller">Seller
+													</ul>
+												<h4><a href="#">Forgot password</a> / <a href="#">Create new password</a></h4>
+												<div class="single-bottom">
+													<input type="checkbox"  id="brand" value="">
+													<label for="brand"><span></span>Remember Me.</label>
+												</div>
+												<input type="button" value="SIGNIN" onclick="login_func();">
+											</form>
+											<script src="js/Signin.js"></script>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<p>By logging in you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+		<footer>
+
+<div class="row bottom-footer text-center-mobile">
+	<div class="col-sm-8">
+		<p>&copy; 2015 All Rights Reserved. Powered by <a href="http://www.cse.du.ac.bd/">CSEDU</a> </p>
+	</div>
+	<div class="col-sm-4 text-right text-center-mobile">
+
+	</div>
+</div>
+</footer>
+		<!-- Holder for mobile navigation -->
+		<div class="mobile-nav">
+			<ul>
+			</ul>
+			<a href="#" class="close-link"><i class="arrow_up"></i></a>
+		</div>
+		<!-- Scripts -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/typewriter.js"></script>
+		<script src="js/jquery.onepagenav.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+
+
+	</html>

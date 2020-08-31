@@ -1,0 +1,103 @@
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<link rel="stylesheet" href="css/select_tag.css">
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBdEowm1wWPMbrY09zdM2VYNdBoBUxDVxA",
+    authDomain: "sdplab-dbd0a.firebaseapp.com",
+    databaseURL: "https://sdplab-dbd0a.firebaseio.com",
+    projectId: "sdplab-dbd0a",
+    storageBucket: "sdplab-dbd0a.appspot.com",
+    messagingSenderId: "215031990656"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<div id="mainselection">
+  <select id="options">
+    <!--<option>Select an Option</option>-->
+    <!--<option>Option 1</option>-->
+    <!--<option>Option 2</option>-->
+  </select>
+</div>
+
+<!--<div>-->
+  <!--<select id="options"></select>-->
+<!--</div>-->
+<button type="submit" onclick="getPrescription()">View Prescription</button>
+<div class="styled-select green rounded">
+  <select id="options2"></select>
+</div>
+<button type="submit" onclick="requestPharmacy()">Request</button>
+
+<script>
+  var fullTable = null;
+
+  function check() {
+    var id = "lVnZdZ3sQIb2OCZ7DKSPbXk8sjx1";
+
+    var dbRef = firebase.database().ref('/Patient/'+id+'/Prescription').once('value').then(function(snapshot) {
+      //snapshot.forEach(function(patientID){}); /* Doctor ID add korte hbe */
+      var prop = snapshot.val();
+      for (var key in prop) {
+        var showTable = '<option>'+key+'</option>';
+
+        if(fullTable === null) fullTable =showTable;
+        else fullTable = fullTable + showTable;
+      }
+      options.innerHTML = fullTable;
+    });
+  }
+
+  check();
+</script>
+
+<script>
+  var fullTable2 = null;
+
+  function check2() {
+    var dbRef = firebase.database().ref('/Pharmacy/').once('value').then(function(snapshot) {
+      var prop = snapshot.val();
+      for (var key in prop) {
+        var showTable2 = '<option>'+key+'</option>';
+
+        if(fullTable2 === null) fullTable2 = showTable2;
+        else fullTable2 = fullTable2 + showTable2;
+      }
+
+      options2.innerHTML = fullTable2;
+    });
+  }
+
+  check2();
+</script>
+
+<script>
+  function getPrevPage(value) {
+    var element = document.getElementById(value);
+    var elementValue = element.options[element.selectedIndex].value;
+    console.log(elementValue);
+    return elementValue;
+  }
+
+  function getPrescription() {
+    var selectedIndex = getPrevPage("options");
+
+    window.location.assign("prescription.html?"+selectedIndex);
+  }
+
+  function requestPharmacy() {
+    var selectedPrescription = getPrevPage("options");
+    var selectedPharmacy = getPrevPage("options2");
+
+    updateRequest(selectedPharmacy,selectedPrescription);
+  }
+
+  function updateRequest(myPharmacy, myPrescription) {
+    firebase.database().ref('/Pharmacy/'+myPharmacy+'/Request').child('/'+myPrescription).update({
+      status : "reqested"
+    });
+
+  }
+</script>
